@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Writeups on Woahuh&#39;s writeups site</title>
+    <link>//localhost:1313/writeups/</link>
+    <description>Recent content in Writeups on Woahuh&#39;s writeups site</description>
+    <generator>Hugo -- 0.155.1</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 31 Jan 2026 19:18:22 +0700</lastBuildDate>
+    <atom:link href="//localhost:1313/writeups/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Brute It CTF Try Hack Me</title>
+      <link>//localhost:1313/writeups/brute-it-thm/</link>
+      <pubDate>Sat, 31 Jan 2026 19:18:22 +0700</pubDate>
+      <guid>//localhost:1313/writeups/brute-it-thm/</guid>
+      <description>&lt;p&gt;Welcome to my first writeup! Today we will solve the Brute It CTF in Try Hack Me!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

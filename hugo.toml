@@ -1,0 +1,14 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Woahuh's writeups site"
+theme = "PaperMod"
+
+mainSections = ["Writeups"]
+
+[menu]
+
+  [[menu.main]]
+    name = "Writeups"
+    url = "/writeups/"
+    weight = 1
+
