@@ -6,4 +6,5 @@ title = 'Home'
 
 # Welcome to my writeup site! 
 
-## You can explore my writeups by just simply click the writeup text on the top left corner!
+## You can explore my writeups by just simply click the writeup text on the top left corner!  
+Note: my English isnt very good so i might make spelling mistakes
