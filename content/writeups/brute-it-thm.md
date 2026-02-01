@@ -262,4 +262,4 @@ root@bruteit:~# cat root.txt
 THM{pr1v1l3g3_3sc4l4t10n}
 ```
 
-Thats also the finish of this room and writeup, thanks you for read my writeup!
+Thats also the finish of this room and writeup, thanks you for reading my writeup!
