@@ -2,13 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>//localhost:1313/writeups/agent-sudo-writeups/</loc>
+    <lastmod>2026-02-04T17:01:58+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313/writeups/</loc>
+    <lastmod>2026-02-04T17:01:58+07:00</lastmod>
+  </url><url>
     <loc>//localhost:1313/</loc>
     <lastmod>2026-01-31T19:20:00+07:00</lastmod>
   </url><url>
     <loc>//localhost:1313/writeups/brute-it-thm/</loc>
-    <lastmod>2026-01-31T19:18:22+07:00</lastmod>
-  </url><url>
-    <loc>//localhost:1313/writeups/</loc>
     <lastmod>2026-01-31T19:18:22+07:00</lastmod>
   </url><url>
     <loc>//localhost:1313/categories/</loc>
