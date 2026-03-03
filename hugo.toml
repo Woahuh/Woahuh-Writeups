@@ -1,4 +1,4 @@
-baseURL = "/home"
+baseURL = "/"
 languageCode = "en-us"
 title = "Woahuh's site"
 theme = "PaperMod"

@@ -2,11 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>_Main on Woahuh&#39;s site</title>
-    <link>//localhost:1313///home/home/</link>
+    <link>/home/</link>
     <description>Recent content in _Main on Woahuh&#39;s site</description>
     <generator>Hugo -- 0.155.1</generator>
     <language>en-us</language>
     <lastBuildDate></lastBuildDate>
-    <atom:link href="//localhost:1313///home/home/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="/home/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
