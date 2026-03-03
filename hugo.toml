@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "/home"
 languageCode = "en-us"
 title = "Woahuh's site"
 theme = "PaperMod"
@@ -7,7 +7,7 @@ theme = "PaperMod"
 
   [[menu.main]]
     name = "Home"
-    url = "/"
+    url = "/home"
     weight = 1
 
   [[menu.main]]

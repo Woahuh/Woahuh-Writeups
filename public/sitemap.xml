@@ -2,20 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>//localhost:1313///home/home/</loc>
     <lastmod>2026-03-03T20:42:26+07:00</lastmod>
   </url><url>
-    <loc>/writeups/agent-sudo-writeups/</loc>
+    <loc>//localhost:1313///home/</loc>
+    <lastmod>2026-03-03T20:42:26+07:00</lastmod>
+  </url><url>
+    <loc>//localhost:1313///home/writeups/agent-sudo-writeups/</loc>
     <lastmod>2026-02-04T17:01:58+07:00</lastmod>
   </url><url>
-    <loc>/writeups/</loc>
+    <loc>//localhost:1313///home/writeups/</loc>
     <lastmod>2026-02-04T17:01:58+07:00</lastmod>
   </url><url>
-    <loc>/writeups/brute-it-thm/</loc>
+    <loc>//localhost:1313///home/writeups/brute-it-thm/</loc>
     <lastmod>2026-01-31T19:18:22+07:00</lastmod>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>//localhost:1313///home/categories/</loc>
   </url><url>
-    <loc>/tags/</loc>
+    <loc>//localhost:1313///home/tags/</loc>
   </url>
 </urlset>
