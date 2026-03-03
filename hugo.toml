@@ -11,18 +11,11 @@ theme = "PaperMod"
     weight = 1
 
   [[menu.main]]
-    name = "Blog"
-    identifier = "blog"
-    weight = 2
-
-  [[menu.main]]
-    name = "All Posts"
+    name = "Blogs"
     url = "/blog/"
-    parent = "blog"
-    weight = 1
+    weight = 2
 
   [[menu.main]]
     name = "Writeups"
     url = "/writeups/"
-    parent = "blog"
-    weight = 2
+    weight = 3
