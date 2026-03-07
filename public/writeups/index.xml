@@ -1,72 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Writeups on Woahuh&#39;s site</title>
-    <link>/writeups/</link>
+    <link>//localhost:1313/writeups/</link>
     <description>Recent content in Writeups on Woahuh&#39;s site</description>
-    <generator>Hugo -- 0.155.1</generator>
+    <generator>Hugo</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 04 Feb 2026 17:01:58 +0700</lastBuildDate>
-    <atom:link href="/writeups/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/writeups/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Agent Sudo Writeup</title>
-      <link>/writeups/agent-sudo-writeups/</link>
+      <link>//localhost:1313/writeups/agent-sudo-writeups/</link>
       <pubDate>Wed, 04 Feb 2026 17:01:58 +0700</pubDate>
-      <guid>/writeups/agent-sudo-writeups/</guid>
-      <description>&lt;p&gt;Welcome to my writeup! We will explore Agent Sudo room in this writeup!&lt;/p&gt;
-&lt;h2 id=&#34;task-1&#34;&gt;Task 1&lt;/h2&gt;
-&lt;p&gt;Deploy the machine and ready to dive in!&lt;/p&gt;
-&lt;h2 id=&#34;task-2&#34;&gt;Task 2&lt;/h2&gt;
-&lt;p&gt;Lets perform a nmap scan on target system&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;┌─[woahuh@parrot]─[~]
-└──╼ $nmap -sV -Pn -A 10.48.164.152
-&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Nmap scan report for 10.48.164.152
-Host is up (0.18s latency).
-Not shown: 997 closed tcp ports (conn-refused)
-PORT   STATE SERVICE VERSION
-21/tcp open  ftp     vsftpd 3.0.3
-22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey:
-|   2048 ef:1f:5d:04:d4:77:95:06:60:72:ec:f0:58:f2:cc:07 (RSA)
-|   256 5e:02:d1:9a:c4:e7:43:06:62:c1:9e:25:84:8a:e7:ea (ECDSA)
-|_  256 2d:00:5c:b9:fd:a8:c8:d8:80:e3:92:4f:8b:4f:18:e2 (ED25519)
-80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
-|_http-title: Annoucement
-|_http-server-header: Apache/2.4.29 (Ubuntu)
-Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 36.92 seconds
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now we got some basic information and we see 3 ports are open&lt;/p&gt;</description>
+      <guid>//localhost:1313/writeups/agent-sudo-writeups/</guid>
+      <description>&lt;p&gt;Welcome to my writeup! We will explore Agent Sudo room in this writeup!&lt;/p&gt;&#xA;&lt;h2 id=&#34;task-1&#34;&gt;Task 1&lt;/h2&gt;&#xA;&lt;p&gt;Deploy the machine and ready to dive in!&lt;/p&gt;&#xA;&lt;h2 id=&#34;task-2&#34;&gt;Task 2&lt;/h2&gt;&#xA;&lt;p&gt;Lets perform a nmap scan on target system&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;┌─[woahuh@parrot]─[~]&#xA;└──╼ $nmap -sV -Pn -A 10.48.164.152&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Nmap scan report for 10.48.164.152&#xA;Host is up (0.18s latency).&#xA;Not shown: 997 closed tcp ports (conn-refused)&#xA;PORT   STATE SERVICE VERSION&#xA;21/tcp open  ftp     vsftpd 3.0.3&#xA;22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)&#xA;| ssh-hostkey:&#xA;|   2048 ef:1f:5d:04:d4:77:95:06:60:72:ec:f0:58:f2:cc:07 (RSA)&#xA;|   256 5e:02:d1:9a:c4:e7:43:06:62:c1:9e:25:84:8a:e7:ea (ECDSA)&#xA;|_  256 2d:00:5c:b9:fd:a8:c8:d8:80:e3:92:4f:8b:4f:18:e2 (ED25519)&#xA;80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))&#xA;|_http-title: Annoucement&#xA;|_http-server-header: Apache/2.4.29 (Ubuntu)&#xA;Service Info: OSs: Unix, Linux; CPE: cpe:/o:linux:linux_kernel&#xA;&#xA;Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .&#xA;Nmap done: 1 IP address (1 host up) scanned in 36.92 seconds&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Now we got some basic information and we see 3 ports are open&lt;/p&gt;</description>
     </item>
     <item>
       <title>Brute It CTF Try Hack Me</title>
-      <link>/writeups/brute-it-thm/</link>
+      <link>//localhost:1313/writeups/brute-it-thm/</link>
       <pubDate>Sat, 31 Jan 2026 19:18:22 +0700</pubDate>
-      <guid>/writeups/brute-it-thm/</guid>
-      <description>&lt;p&gt;Welcome to my first writeup! Today we will solve the Brute It CTF in Try Hack Me!&lt;/p&gt;
-&lt;p&gt;First, lets go find some information on target&amp;rsquo;s system with a nmap scan&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;┌─[✗]─[woahuh@parrot]─[~]
-└──╼ $nmap -sV -Pn -A 10.48.188.61
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And then, we got this output&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-01 06:19 +07
-Nmap scan report for 10.48.188.61 (10.48.188.61)
-Host is up (0.098s latency).
-Not shown: 998 closed tcp ports (conn-refused)
-PORT   STATE SERVICE VERSION
-22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey:
-|   2048 4b:0e:bf:14:fa:54:b3:5c:44:15:ed:b2:5d:a0:ac:8f (RSA)
-|   256 d0:3a:81:55:13:5e:87:0c:e8:52:1e:cf:44:e0:3a:54 (ECDSA)
-|_  256 da:ce:79:e0:45:eb:17:25:ef:62:ac:98:f0:cf:bb:04 (ED25519)
-80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
-|_http-server-header: Apache/2.4.29 (Ubuntu)
-|_http-title: Apache2 Ubuntu Default Page: It works
-Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 15.85 seconds
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As the output, we have 2 ports open, and thats the answer of question 1&lt;/p&gt;</description>
+      <guid>//localhost:1313/writeups/brute-it-thm/</guid>
+      <description>&lt;p&gt;Welcome to my first writeup! Today we will solve the Brute It CTF in Try Hack Me!&lt;/p&gt;&#xA;&lt;p&gt;First, lets go find some information on target&amp;rsquo;s system with a nmap scan&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;┌─[✗]─[woahuh@parrot]─[~]&#xA;└──╼ $nmap -sV -Pn -A 10.48.188.61&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;And then, we got this output&lt;/p&gt;&#xA;&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-01 06:19 +07&#xA;Nmap scan report for 10.48.188.61 (10.48.188.61)&#xA;Host is up (0.098s latency).&#xA;Not shown: 998 closed tcp ports (conn-refused)&#xA;PORT   STATE SERVICE VERSION&#xA;22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)&#xA;| ssh-hostkey:&#xA;|   2048 4b:0e:bf:14:fa:54:b3:5c:44:15:ed:b2:5d:a0:ac:8f (RSA)&#xA;|   256 d0:3a:81:55:13:5e:87:0c:e8:52:1e:cf:44:e0:3a:54 (ECDSA)&#xA;|_  256 da:ce:79:e0:45:eb:17:25:ef:62:ac:98:f0:cf:bb:04 (ED25519)&#xA;80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))&#xA;|_http-server-header: Apache/2.4.29 (Ubuntu)&#xA;|_http-title: Apache2 Ubuntu Default Page: It works&#xA;Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel&#xA;&#xA;Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .&#xA;Nmap done: 1 IP address (1 host up) scanned in 15.85 seconds&#xA;&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;As the output, we have 2 ports open, and thats the answer of question 1&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

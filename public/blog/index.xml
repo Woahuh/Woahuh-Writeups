@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blogs on Woahuh&#39;s site</title>
+    <link>//localhost:1313/blog/</link>
+    <description>Recent content in Blogs on Woahuh&#39;s site</description>
+    <generator>Hugo</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 07 Mar 2026 15:52:14 +0700</lastBuildDate>
+    <atom:link href="//localhost:1313/blog/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First Blog</title>
+      <link>//localhost:1313/blog/first-blog/</link>
+      <pubDate>Sat, 07 Mar 2026 15:52:14 +0700</pubDate>
+      <guid>//localhost:1313/blog/first-blog/</guid>
+      <description>&lt;h1 id=&#34;this-is-my-first-blog&#34;&gt;This is my first blog!&lt;/h1&gt;&#xA;&lt;p&gt;Welcome to my website, this blog is only a placeholder, but it will get keep. You can go to writeups or stay here to read others writeups/blogs.&lt;/p&gt;&#xA;&lt;p&gt;Enjoy your stay!&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

