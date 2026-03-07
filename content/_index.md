@@ -34,7 +34,7 @@ I'm also interested in reverse engineering.
 
 ## Achievements
 
-- 0xA (Wizard) on TryHackMe
+- 0xA (Wizard) rank on TryHackMe
 
 ---
 
