@@ -10,13 +10,13 @@ title = 'Home'
 
 ## About Me
 
-I'm a cyber security student and a vibe coder. I got into cyber security because i was curiosity about this field
+I'm a cyber security student and a vibe coder. I got into cyber security because i was curious about this field
 
 I'm also interested in reverse engineering.
 
 ---
 
-## **Main skills**
+## Main skills
 
 ### Programming languages:
 
@@ -32,6 +32,14 @@ I'm also interested in reverse engineering.
 
 ---
 
+## Achievements
+
+- 0xA (Wizard) on TryHackMe
+
+---
+
 ## Contact Me
 
-Discord: Woahuh (@_woahuh_)
+Discord: Woahuh (@\_woahuh\_)
+
+Email: Woahuh_contact@proton.me
